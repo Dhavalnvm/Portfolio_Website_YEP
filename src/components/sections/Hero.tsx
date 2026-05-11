@@ -178,8 +178,8 @@ export function Hero() {
               variants={fadeUp}
               className="mt-5 max-w-2xl text-base leading-relaxed text-white/65 sm:text-lg"
             >
-              B.E. CSE (AI &amp; ML) — {profile.education.cgpa} CGPA. Patent-pending
-              inventor and 3× hackathon winner ({profile.totalPrize}). I build
+              B.E. CSE (AI &amp; ML) — {profile.education.cgpa} CGPA. Published
+              researcher and 3× hackathon winner ({profile.totalPrize}). I build
               real-time computer vision, multimodal AI, and production RAG systems.
             </motion.p>
 

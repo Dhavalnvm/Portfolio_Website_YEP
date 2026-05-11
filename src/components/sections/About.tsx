@@ -40,7 +40,7 @@ export function About() {
                 <p>
                   I&apos;ve shipped CNN pipelines on Jetson at 28 FPS, predictive
                   models for infrastructure failure, dark-web threat intelligence
-                  layers, and a space-weather platform now under patent review.
+                  layers, and a real-time space-weather intelligence platform.
                   Across these, I optimize for{' '}
                   <span className="text-white">latency, clarity, and operator trust</span>.
                 </p>

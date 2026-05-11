@@ -10,7 +10,7 @@ import { profile } from '@/data/portfolio';
 
 export const metadata: Metadata = {
   title: `${profile.name} — ${profile.title}`,
-  description: `${profile.title}. Patent pending inventor, 3x hackathon winner, computer vision researcher.`,
+  description: `${profile.title}. Published researcher, 3x hackathon winner, computer vision engineer.`,
   keywords: ['AI Engineer', 'Machine Learning', 'Computer Vision', 'Deep Learning', 'Portfolio'],
   authors: [{ name: profile.name }],
   openGraph: {

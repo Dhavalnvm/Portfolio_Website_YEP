@@ -15,7 +15,7 @@ export const profile = {
     'AI Engineer',
     '3x Hackathon Winner',
     'Computer Vision Researcher',
-    'Patent Pending Inventor',
+    'Published Researcher',
     'Deep Learning Architect',
   ],
   totalPrize: '₹1,17,000+',
@@ -91,7 +91,7 @@ export const featuredProjects: FeaturedProject[] = [
     id: 'aether',
     title: 'Aether',
     subtitle: 'Space Weather Intelligence Platform',
-    badge: 'Patent Pending 2026',
+    badge: 'Research Paper · 2026',
     description:
       'Real-time NASA/NOAA satellite data ingestion via Kafka → ClickHouse. LSTM + Prophet forecasting, Isolation Forest anomaly detection. RAG chatbot with Flutter app and WebSocket streaming.',
     stack: ['Kafka', 'ClickHouse', 'LSTM', 'Prophet', 'Flutter', 'FastAPI', 'RAG'],

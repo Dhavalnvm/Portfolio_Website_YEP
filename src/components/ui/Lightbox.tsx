@@ -39,10 +39,12 @@ export function Lightbox({ images, title, subtitle, open, onClose }: Props) {
   }, [open, images.length, onClose]);
 
   const multi = images.length > 1;
+  const safeIdx = Math.min(idx, Math.max(0, images.length - 1));
+  const currentImage = images[safeIdx];
 
   return (
     <AnimatePresence>
-      {open && (
+      {open && currentImage && (
         <motion.div
           key="lightbox"
           initial={{ opacity: 0 }}
@@ -96,7 +98,7 @@ export function Lightbox({ images, title, subtitle, open, onClose }: Props) {
           <div className="relative flex flex-col items-center gap-4" onClick={(e) => e.stopPropagation()}>
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
-                key={idx}
+                key={safeIdx}
                 initial={{ opacity: 0, scale: 0.96, y: 8 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.97, y: -6 }}
@@ -105,7 +107,7 @@ export function Lightbox({ images, title, subtitle, open, onClose }: Props) {
                 style={{ boxShadow: '0 30px 100px -20px rgba(64,224,208,0.35)' }}
               >
                 <Image
-                  src={images[idx]}
+                  src={currentImage}
                   alt={title ?? 'Achievement'}
                   placeholder="blur"
                   sizes="92vw"

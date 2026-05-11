@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import type { StaticImageData } from 'next/image';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { AchievementCard } from '@/components/ui/AchievementCard';
@@ -9,12 +8,20 @@ import { Lightbox } from '@/components/ui/Lightbox';
 import { achievements, type Achievement } from '@/data/achievements';
 
 export function AchievementsSection() {
-  const [active, setActive] = useState<Achievement | null>(null);
+  // `current` stays set after close so images stay valid during the exit animation.
+  // `open` is the actual visibility flag the Lightbox uses.
+  const [current, setCurrent] = useState<Achievement | null>(null);
+  const [open, setOpen] = useState(false);
 
-  const lightboxImages: StaticImageData[] = active
-    ? active.secondaryImage
-      ? [active.image, active.secondaryImage]
-      : [active.image]
+  function openCard(a: Achievement) {
+    setCurrent(a);
+    setOpen(true);
+  }
+
+  const images: StaticImageData[] = current
+    ? current.secondaryImage
+      ? [current.image, current.secondaryImage]
+      : [current.image]
     : [];
 
   return (
@@ -32,18 +39,18 @@ export function AchievementsSection() {
               key={a.id}
               achievement={a}
               index={i}
-              onOpen={setActive}
+              onOpen={openCard}
             />
           ))}
         </div>
       </div>
 
       <Lightbox
-        images={lightboxImages}
-        title={active?.title}
-        subtitle={active?.subtitle}
-        open={!!active}
-        onClose={() => setActive(null)}
+        images={images}
+        title={current?.title}
+        subtitle={current?.subtitle}
+        open={open}
+        onClose={() => setOpen(false)}
       />
     </section>
   );

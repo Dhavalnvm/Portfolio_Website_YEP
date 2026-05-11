@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($root = \"d:\\\\Dhaval Codes\\\\Website\"; Write-Output \"=== /assets ===\"; Get-ChildItem \"$root\\\\assets\" -ErrorAction SilentlyContinue | Format-Table Name, Length -AutoSize; Write-Output \"=== /public ===\"; Get-ChildItem \"$root\\\\public\" -ErrorAction SilentlyContinue | Format-Table Name, Length -AutoSize; Write-Output \"=== /src/assets \\(should not exist\\) ===\"; if \\(Test-Path \"$root\\\\src\\\\assets\"\\) { Get-ChildItem \"$root\\\\src\\\\assets\" | Format-Table Name } else { Write-Output \"absent \\(good\\)\" })"
+    ]
+  }
+}

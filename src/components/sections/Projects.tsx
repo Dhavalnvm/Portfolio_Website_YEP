@@ -13,8 +13,8 @@ export function Projects() {
       <div className="container-page">
         <SectionHeading
           eyebrow="Selected Work"
-          title="Six chambers of intelligent systems."
-          subtitle="Each project explores a different surface — observability, security, law, infrastructure, perception, sustainability."
+          title="Seven chambers of intelligent systems."
+          subtitle="Each project explores a different surface — observability, security, law, infrastructure, perception, sustainability, atmosphere."
         />
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
